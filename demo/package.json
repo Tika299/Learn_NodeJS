@@ -11,9 +11,13 @@
   "type": "commonjs",
   "main": "src/index.js",
   "scripts": {
+    "beautiful": "lint-staged",
     "start": "nodemon src/index.js",
     "watch": "sass -w src/resources/scss/app.scss src/public/css/app.css",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,scss}" : "prettier --single-quote --trailing-comma all --tab-width 4 --write"
   },
   "dependencies": {
     "express": "^5.1.0",
@@ -21,5 +25,10 @@
     "morgan": "^1.10.0",
     "nodemon": "^3.1.9",
     "sass": "^1.86.3"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.8.0"
   }
 }
